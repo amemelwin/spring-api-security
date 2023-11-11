@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="com.spring.api.security.repository.AuthRepository">
+	<resultMap type="com.spring.api.security.entity.UserEntity"
+		id="userMap">
+		<id property="userId" column="user_id"></id>
+		<result property="userName" column="user_name"></result>
+		<result property="email" column="email"></result>
+		<result property="password" column="password"></result>
+		<result property="role" column="role"></result>
+		<result property="createdAt" column="created_at"></result>
+		<result property="updatedAt" column="updated_at"></result>
+	</resultMap>
+	<select id="getUserByEmail" resultMap="userMap">
+		SELECT *
+		FROM users
+		WHERE email=#{email}
+	</select>
+	<select id="findUserByEmail" resultMap="userMap">
+		SELECT *
+		FROM users
+		WHERE email=#{email}
+	</select>
+
+</mapper>
