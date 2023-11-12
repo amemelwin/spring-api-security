@@ -12,9 +12,9 @@ import com.spring.api.security.repository.AuthRepository;
 @Service
 public class AuthService {
 
-	
-	@Autowired
-	PasswordEncoder passwordEncoder;
+//	
+//	@Autowired
+//	PasswordEncoder passwordEncoder;
 	
 	@Autowired
 	AuthRepository authRepository;

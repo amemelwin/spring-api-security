@@ -2,6 +2,7 @@ package com.spring.api.security.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,5 +29,9 @@ public class AuthController {
 	public ResponseEntity<Object> login(@RequestBody LoginRequestDto loginRequestDto) {
 		return loginService.login(loginRequestDto);
 	}
-
+	
+	@GetMapping("api/v1/user")
+	public ResponseEntity<Object> test(){
+		return ResponseEntity.ok("Valid");
+	}
 }
